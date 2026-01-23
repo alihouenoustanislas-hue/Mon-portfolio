@@ -5,11 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Développeur Web</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+     
+      .menu-toggle {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: #fff;
+      }
+
+      /* RESPONSIVE MENU */
+      @media (max-width: 992px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        nav {
+          position: absolute;
+          top: 85px;
+          left: 0;
+          width: 100%;
+          background: #000;
+          display: none;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+          flex-direction: column;
+          padding: 20px;
+          gap: 15px;
+          text-align: center;
+        }
+
+        nav.active {
+          display: block;
+        }
+      }
+    </style>
   </head>
+
   <body>
     <header>
-      <div class="logo">ALIHOUENOU <span>Jessoutin Stanislas</span></div>
-      <nav>
+      <div class="logo">ALIHOUENOU<span> Jessoutin Stanislas</span></div>
+
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+
+      <nav id="nav-menu">
         <ul>
           <li><a href="#" class="active">Accueil</a></li>
           <li><a href="#">À propos</a></li>
@@ -56,6 +97,7 @@
             <a href="CV Stanislas Jessoutin ALIHOUENOU.pdf" class="download-cv">Télécharger mon CV</a>
           </div>
         </div>
+
         <div class="about-image">
           <img
             src="photo_de_profil.jpeg"
@@ -64,6 +106,7 @@
         </div>
       </div>
     </section>
+
     <section class="projects" id="projects">
       <h2 class="projects-title">Mes Projets</h2>
       <div class="projects-grid">
@@ -90,6 +133,7 @@
         </div>
       </div>
     </section>
+    
     <section class="skills" id="skills">
       <h2 class="skills-title">Mes Compétences</h2>
       <div class="skills-container">
@@ -151,6 +195,7 @@
           ><br />N'hésitez pas à me <span class="highlight">contacter</span>
         </h2>
       </div>
+
       <form class="contact-form">
         <div class="form-row">
           <div class="form-group">
@@ -162,6 +207,7 @@
             <input type="text" id="nom" placeholder="Contact" />
           </div>
         </div>
+
         <div class="form-group">
           <label for="sujet">Votre sujet</label>
           <input
@@ -170,6 +216,7 @@
             placeholder="Développement d'un site vitrine"
           />
         </div>
+
         <div class="form-group">
           <textarea
             id="message"
@@ -179,13 +226,23 @@
         <button type="submit" class="submit-btn">Envoyer</button>
       </form>
     </section>
+
     <footer class="footer">
       <div class="footer-left">
         Designed by [<span class="highlight">Jessoutin Stanislas</span>] with HTML CSS
         JS
       </div>
-      <div class="footer-right">Tous droits réservés - 2025</div>
+      <div class="footer-right">Tous droits réservés - 2026</div>
     </footer>
     <script src="script.js"></script>
+
+    <script>
+      const toggle = document.getElementById("menu-toggle");
+      const nav = document.getElementById("nav-menu");
+
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+</script>
   </body>
 </html>
